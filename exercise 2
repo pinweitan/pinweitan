@@ -8,6 +8,7 @@ pwd
 mkdir Algo1
 
 4) Within Algo1, create subfolder named config,bin,logs, and scripts
+cd algo1
 mkdir {config, bin, logs, scripts}
 
 5) Within config create empty files named config.config and variables
