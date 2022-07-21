@@ -25,13 +25,13 @@ touch today.log
 8) Go back to your home directory
 cd
 
-##9 Long list everything recursively
+9) Long list everything recursively
 ls -R
 
-##10 Remove the file named variables in the config directory
+10) Remove the file named variables in the config directory
 rm Algo1/config/variables
 
-##11 Remove the bin directory that you previously created 
+11) Remove the bin directory that you previously created 
 rmdir Algo1/bin
 
 12) Change back to your home directory
