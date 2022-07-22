@@ -11,10 +11,10 @@ STOCK=AAPL_US
 PRICE=290.84
 
 #Print out to the screen a sentence ‘The current price of is ’ where you call the variables and get their values
-echo "The current price of" $STOCK is $PRICE
+echo "The current price of" STOCK is $PRICE
 
 #Create a variable named WHOAMI and assign it your current username. Do this in one command.
-WHOAMI=`logname`
+WHOAMI= ec 2
 
 #Using just $ and () assign a variable named SERVERTYPE by using the uname command
 SERVERTYPE=$(uname)  
@@ -42,12 +42,13 @@ $PATH
 
 #Append your newly created script directory to your path variable
 PATH=$PATH:/scripts/
+export PATH=$PATH:/scripts/
 
 #Check you can see your new path appended to the end of the path variable
 echo $PATH
 
 #If you have Algo1 still created from previous exercises, remove the directory structure and all files within it
-rm -r Algo1
+rm -rf Algo1
 
 #Make a directory named Payment1
 mkdir Payment1
