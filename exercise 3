@@ -71,7 +71,7 @@ chmod u=rwx,og=r instance.properties
 
 #Set permissions on the file start.sh so that everyone can execute and so that the group and owner can read and write
 cd ~/Payment1/scripts
-Chmod o+w start.sh
+chmod 771 start.sh
 
 #Direct the output of man cat into a file in your home directory named cat.output
 cd ~
