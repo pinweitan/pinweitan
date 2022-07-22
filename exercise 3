@@ -38,7 +38,7 @@ cd ~
 mkdir scripts
 
 #Print out your $PATH Value
-$PATH
+echo $PATH
 
 #Append your newly created script directory to your path variable
 PATH=$PATH:/scripts/
