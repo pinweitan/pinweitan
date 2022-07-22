@@ -23,7 +23,7 @@ SERVERTYPE=$(uname)
 echo $SERVERTYPE
 
 #Assign a variable named CMD the command uname -i (not the value of running the command but the command itself)
-CMD = "uname -i"
+CMD ="uname-i"
 
 #Using echo and the variable CMD, show how you echo the value of CMD (not execute the command)
 echo $CMD
