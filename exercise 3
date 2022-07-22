@@ -42,4 +42,4 @@ mkdir scripts
 echo $PATH
 
 15)Append your newly created script directory to your path variable
-PATH=`~/scripts`
+PATH= $PATH:/scripts
