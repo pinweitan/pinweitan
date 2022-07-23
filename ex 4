@@ -40,13 +40,13 @@ cp ./newOrders.log ~/
 wc -l newOrders.log
 
 ## Run a command to pull out all of the messages with the instruction buy in fix (you may need to look up the tag again) from the original log file and put them into a new log file in the logs directory named buyMessages.log
-cat fixlog20220722090629.log | grep "10=0015" > ~/logs/buyMessages.log
+cat fixlog20220722090629.log | grep "150=6" > ~/logs/buyMessages.log
 
 ## Count how many lines are in that file.
 wc -l ~/logs/buyMessages.log
 
 ## Count how many new orders are in the buyMessages.log.
-0
+27
 
 ## Create a new version of the logfile named noNewOrders.log that has everything except new order messages in it and put it in the logs directory.
 cat buyMessages.log | grep "
