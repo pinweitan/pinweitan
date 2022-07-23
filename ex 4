@@ -31,7 +31,7 @@ cat fixlog20220722090629.log | less
 
 ## Exit less and run a search using grep for all new order messages. Redirect the output to a file named newOrders.log in the logs directory.
 q
-cat fixlog20220722090629.log | grep "35=8" > newOrders.log
+grep "35=8" fixlog20220722090629.log  > newOrders.log
 
 ## Copy the newOrders.log file from the logs directory to your home directory.
 cp ./newOrders.log ~/
