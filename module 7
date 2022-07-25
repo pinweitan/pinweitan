@@ -8,10 +8,10 @@ df -h > filesystem.usage
 df -kh~
 
 ##Show the disk usage for your home directory in human-readable format and add it a file named disk.usage in your home directory.
-df -kh ~ > disk.usage
+df -h>disk.usage
 
 ##Run a disk check specifically showing output for all files and folders in human-readable format. Put the results into usage2 in your home directory.
-du -ah > usage2
+du -ah>usage2
 
 ##Show the disk usage for everything in /var.
 du /var
