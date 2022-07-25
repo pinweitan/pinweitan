@@ -72,4 +72,4 @@ yy then p
 :%s/;/,/g
 
 ##Save and exit the file.
-:wq
+:x
