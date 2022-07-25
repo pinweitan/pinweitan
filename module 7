@@ -14,7 +14,7 @@ df -h>disk.usage
 du -ah>usage2
 
 ##Show the disk usage for everything in /var.
-du /var
+du /var*
 
 ##Run a disk usage command on your home directory that will follow any links if you have them set up and display the output in human-readable format.
 du -l -h
@@ -23,7 +23,7 @@ du -l -h
 mkdir disk
 
 ##Copy your output files from exercise 2, exercise 4, and exercise 5 into this folder.
-cp pinwei.220725.module6 ~/disk/
+cp ex2 ex4 ex5 ~/disk/
 
 ##Move into the disk folder.
 cd disk
