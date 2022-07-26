@@ -39,7 +39,7 @@ fi
 TODAY=`date+%d.%m.%Y`
 
 ##Create another variable named GENDATE that has the command to generate and store the same date.
-GENDATE='date+%d.%m.%Y'
+GENDATE=`date+%d.%m.%Y`
 
 ##Create a file named output.log with today’s date as an extension using the variable you just created.
 touch output.log.$TODAY
