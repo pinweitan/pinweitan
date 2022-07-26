@@ -73,4 +73,4 @@ find ~ -name *.sh
 23) Go into the scripts directory and use a command to remove both the start and stop script without specifying each file seperately: 
 cd ~/Algo1/scripts
 rm s*.sh
-
+history > pinwei.220721.mod
