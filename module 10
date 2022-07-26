@@ -24,7 +24,7 @@ grep 39=1 fills.log > partialFills.log
 
 ##Use awk to create a new file out of the partial fill log that has the following tags only: Symbol (55); orderID (11); side(54); fill price (31); fill quantity (32); execution id (17). Name the file parsedPartialFills.log and make sure you print the columns in the order listed here.
 
-awk '{print $1,$2,$3,$4,$5,$6}' partialFillslog > parsedPartialFills.log	
+awk '{print $7,$8,$12,$9,$13,$14}' partialFillslog > parsedPartialFills.log	
 
 ##Using an editor, remove the first part of every fix tag (so you are left with the value only) and turn the file into a comma separated list with no spaces. This is how you might have to get a file ready to send to a trader.
 
