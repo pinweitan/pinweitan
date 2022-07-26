@@ -73,3 +73,6 @@ yy then p
 
 ##Save and exit the file.
 :x
+
+##Run the history command and save the output to a file named name.YYMMDD.module9 in the directory specified by your instructor.
+history > pinweitan.220725.module8
