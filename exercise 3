@@ -110,5 +110,5 @@ unset MYTEMP
 rm-r temp
 
 #Run the following command to store your results in the specified directory the trainer gave. Replace the name and date with the correct values:
-history > ec2.22072022
+history > pinwei.22072022.mod2
 
