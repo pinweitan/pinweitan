@@ -1,6 +1,5 @@
 #Run the fixGenerator.sh script in your home directory:
-
-
+fixGenerator.sh/ &
 
 #Run a command to send the terminal to sleep for 10 seconds.
 sleep 10
