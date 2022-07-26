@@ -4,11 +4,11 @@ mkdir logs
 
 ##Move the log output from the fixGenerator script into the logs directory. (Be sure the script has finished before doing this.)
 
-mv fixlog123456.log logs	
+mv fixlog20220723033318.log ./logs	
 
 ##From the command line, replace all instances of MTHREE in the file with M3 and put the output into a new file named fixlog2.log in the logs directory.
 
-sed 's/MTHREE/M3/' fixlog202207262321.log > fixlog2.log
+sed 's/MTHREE/M3/' fixlog20220723033318.log > fixlog2.log
 
 ##Run a command to pull all fill messages from fixlog2.log and put the output into a new logfile named fills.log. (You may need to look up how to tell if a message is a fill.)
 
