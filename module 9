@@ -35,7 +35,7 @@ watch date
 ./fixGenerator.sh &
 
 #While it is running, use watch and run a line count on the changing log file as it is generated.
-watch wc -l fixlog*
+cat fixlog20220722090629.log | watch wc -l
 
 Run the history command and save the output to a file named name.YYMMDD.module9 in the directory specified by your instructor.
 history > pinweitan.220726.module9
