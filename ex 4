@@ -18,7 +18,7 @@ mv ./newlog.log ~/logs/
 cat fixlog20220722090629.log.log >> newlog.log
 
 ## Create a soft link named Daily to your newlog.log file in the logs directory.
-ln -s newlog.log Daily
+ln -s ~/logs/newlog.log Daily
 
 ## Return to your home directory.
 cd
