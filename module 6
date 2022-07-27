@@ -5,7 +5,7 @@ ps -ef
 echo $USER
 
 ##Run a command to see all the processes running on the server and use grep to select only the processes your user is running.
-ps -ef | grep "root"
+ps -ef | grep "ubuntu"
 
 ##Repeat the previous exercise. This time, select every process except things running as you.
 ps -ef | grep -v "ubuntu"
