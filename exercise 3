@@ -79,7 +79,7 @@ touch cat.output
 man cat>cat.output
 
 #Change the permission of that file so everyone can read it but only the group can write and execute
-chmod 474 cat.output
+chmod 434 cat.output
 
 #Go back to your home directory
 cd ~
@@ -91,8 +91,7 @@ pwd
 rm -rf Payment 1
 
 #Delete the cat.output file, but with a warning first to the user
-alias rm='rm -i'
-rm cat.output
+rm -i cat.output
 
 #Create a directory named temp
 mkdir temp
