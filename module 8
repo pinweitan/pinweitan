@@ -37,15 +37,15 @@ Enter
 g then ctrl+g
 
 ##Write the number of lines into the file one line above the word count with the text "line count" plus the value.
-line count 12
+line count 6
 
 ##Delete "Good luck" wherever it occurs in the file.
-:%s/\Good Luck//g
+:%s/\Good luck//g
 
 ##Save and exit the file
 :x
 
-***Part 2***
+PART 2)
 ##Run the fixGenerator.sh script again from your home directory using the following commands:
 cd ~
 ./fixGenerator.sh &
