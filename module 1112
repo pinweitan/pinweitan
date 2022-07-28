@@ -44,4 +44,4 @@ GENDATE=`date+%d.%m.%Y`
 ##Create a file named output.log with today’s date as an extension using the variable you just created.
 touch output.log.$TODAY
 ##Run the history command and save the output to a file named name.YYMMDD.module9 in the directory specified by your instructor.
-history > pinweitan.220726.module11
+history > pinweitan.220726.module1112
