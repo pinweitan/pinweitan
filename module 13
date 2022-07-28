@@ -11,20 +11,21 @@ Part 1
 
 ##Set up the script to run on May 4th at midday.
 0 12 04 05 * ~/fixGenerator.sh
+
 ##Set up the script to run on the 1st of every month at 625am.
 25 6 1 1 * ~/fixGenerator.sh
+
 ##Set up the script to run every 20 minutes every Tuesday between 10am and 2pm.
 20 10,14 * * 2 ~/fixGenerator.sh
 
 
 ##Set up the script to run the 1st of every other month on the hour..
 0 * 1 */2 * ~/fixGenerator.sh           
-##Set up the script to run at 6am and 8am on Saturday and Sunda
 
+##Set up the script to run at 6am and 8am on Saturday and Sunda
 0 6,8 * * * ~/fixGenerator.sh             
 
-crontab > crontab.pinwei.module13
-
+crontab -l > crontab.pinwei.module13
 
 
 PART 2
@@ -75,7 +76,7 @@ sed 's/Gollum/Thanos/g' LOTR.txt > LOTRMarvel.txt
 diff LOTR.txt LOTRMarvel.txt
 
 ##Change the permission on LOTR.txt so that it is read and executable for others and group, and fully accessible for the current user.
-chmod 744 LOTR.txt
+chmod 755 LOTR.txt
 
 ##Count the number of words in LOTR.txt.
 wc -w LOTR.txt
