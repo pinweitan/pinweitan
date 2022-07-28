@@ -7,7 +7,7 @@ Part 1
 ##Set up the script to run every half hour from 9-4 on Monday, Wednesday and Friday.
 30 9-4 * * 1,3,5 ~/fixGenerator.sh
 ##Set up the script to run every other hour every day.
-60 * * * * ~/fixGenerator.sh
+0 * * * * ~/fixGenerator.sh
 
 ##Set up the script to run on May 4th at midday.
 0 12 04 05 * ~/fixGenerator.sh
