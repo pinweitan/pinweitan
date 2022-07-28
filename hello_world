@@ -1,6 +1,8 @@
-#!bin/bash
+#!/bin/sh
+
+# Define your function here
 Hello () {
-   echo "hello world"
+   echo "Hello World"
 }
 
 Hello
