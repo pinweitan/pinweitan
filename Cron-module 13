@@ -67,7 +67,7 @@ grep -i hobbit LOTR.txt
 
 ##Put the first eight lines and the last three lines into a new file named LOTRtxt.
 head -n 8 LOTR.txt > LOTRtxt
-tail -n 3 LOTR.txt > LOTRtxt
+tail -n 3 LOTR.txt >> LOTRtxt
 
 ##Run a command on the command line to replace all occurrences of Gollum with Thanos and output the results into a new file named LOTRMarvel.txt.
 sed 's/Gollum/Thanos/g' LOTR.txt > LOTRMarvel.txt
