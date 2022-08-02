@@ -1,4 +1,4 @@
- PROPERTIES
+ACID  PROPERTIES
 Atomicity
 
 Its a transaction that follows the 'all or nothing' principle. An atomic transaction doesnt succeed halfway.
