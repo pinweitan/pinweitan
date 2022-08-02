@@ -29,3 +29,4 @@ Read uncommitted allows data to  be read  while another person edits data simult
 Durability
 
 This allows the data to be saved in the file even if there's unforeseen circumstances such as power failure or hang. The last property ensures that once the operation has been carried out, it will persist and cannot be undone even if the system fails
+If a person booked a train ticket and systems fails, the train ticket will be booked and will not alter any data.
