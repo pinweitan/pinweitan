@@ -1,0 +1,31 @@
+ PROPERTIES
+Atomicity
+
+Its a transaction that follows the 'all or nothing' principle. An atomic transaction doesnt succeed halfway.
+
+An example: During a back up where you are supposed to backup 10 files, but due to unforeseen circumstances, your computer hanged. Atomicity will not back up fully and when you restart the computer, it goes back the default files you are supposed to backup.
+
+Consistency
+
+A transaction is consistent if it can only move the database from one valid state to another valid state. A consistent database enforces constraints on the types and sizes of data that are allowed.
+
+As an example, consider a debtor and payment relationship where a debtor can have one or more payments. If you try to delete only a debtor row without first deleting its payments, then the payments associated with that debtor would have a foreign key pointing to a record that no longer existed. A properly configured relational schema will prevent this from happening by either rejecting the delete transaction outright or by automatically deleting all the orders associated with the customer being deleted first. (This automation is called a cascade delete, and because it can lead to the deletion of millions of records without warning, it is usually not the preferred solution to resolving orphan keys.
+A foreign key (FK) is a column or combination of columns that is used to establish and enforce a link between the data in two tables to control the data that can be stored in the foreign key table
+
+Another example, a column in a database may only have the values for a coin flip as "heads" or "tails." If a user were to attempt to put in "sideways," consistency rules for the database would not allow it.
+Consistency can also be understood as after a successful write, update or delete of a Record, any read request immediately receives the latest value of the Record
+
+Isolation
+In database systems, isolation determines how transaction integrity is visible to other users and systems.
+
+A lower isolation level increases the ability of many users to access the same data at the same time, but increases the number of concurrency effects (such as dirty reads or lost updates) users might encounter. Conversely, a higher isolation level reduces the types of concurrency effects that users may encounter, but requires more system resources and increases the chances that one transaction will block another.[1]
+
+There 2 types of data, one is serializable and Read uncommitted.
+
+Serializable will allow all changes to be done in data before it can be read. This can reduce concurrent effects
+
+Read uncommitted allows data to  be read  while another person edits data simultaneously. This can increase concurrent effects.
+
+Durability
+
+This allows the data to be saved in the file even if there's unforeseen circumstances such as power failure or hang. The last property ensures that once the operation has been carried out, it will persist and cannot be undone even if the system fails
