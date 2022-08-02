@@ -1,0 +1,111 @@
+Normalization is the process of breaking down these relationships into simpler structures. A properly-normalized design improves performance and reduces the complexity of relationships by minimizing data duplication (redundancy). It will reduce updation anomaly, insertion anomaly and deletion anomaly.
+
+DATA Redundancy
+
+Data redundancy occurs when your data is being repeated which have no practical use, for example in a class 2016 and class 2017 data with different headers.
+
+	Class 2016
+Name 			HOD in charge HOD number
+
+Alpha			Mr X 		999
+Beta			Mr X		999
+Charlie 		Mr X		999
+
+
+Hypothetically, if a person names Delta enrolls for this class, he will have data redundancy in the HOD in charge and HOD number as it is the same for all.
+This is insertion anomaly.
+
+For example, the class year ended for 2016 and the admin staff wants to change to 2017. If he deletes all the rows, there will be no data left.
+This is deletion anomaly
+
+For updation, if the HOD in charge of class 2016, if the admin staff updates the HOD in charge he will have to update everyone in THE HOD in charge.
+This is updating anomaly.
+
+Normalization allows spliting of data such as 
+	2017
+Name 	HOD in Charge	  							HOD in charge HOD number
+Delta											Mr Y			888
+
+By splitting files, allow us to save the data and values which also minimzie data anomaly.
+
+Functional Dependancies
+
+A functional dependency, as the name implies, is a dependency relationship. That is, "column A depends on column B", or "columns A, B, and E depend on columns C and D". In a well-designed table, all columns will depend on at least one column in the table. If there are columns that are independent of the others, they are candidates to be moved to a separate table.		
+
+For instance: 
+Understanding how some data is dependent on other data is key to designing good database structures. As an example, in a table listing employee information with a social security number and a name, we could say that the name is functionally dependent on the social security number. This means if we know the social security number, we can find an employee's name.
+
+The converse situation is not true, however. Multiple employees can have the same name, so social security number is not functionally dependent on the name. We would need to be cautious to ensure our table design did not have the social security number depending upon the name									
+
+Thus, this shows that the column name depends on the security ID.
+
+
+
+Next, we talk about normalziation process.
+
+
+
+To achieve 1NF(FIRST NORMAL FORM)
+
+To achieve 1NF, the table must satisfy the following conditions:
+
+There is no top-to-bottom ordering to the rows.
+There is no left-to-right ordering to the columns.
+Every row can be uniquely identified.
+Every row/column intersection (field) contains only one value.
+
+
+
+
+
+Top-to-Bottom or Left-to-Right Ordering
+These two conditions specify that the data in a table can be accessed in any order. In other words, you are not required to look at the first row to make sense of the second row. The same must be true of the columns. The data above does not violate this condition.
+
+Every Row Can Be Uniquely Identified
+Our heap table lacks a unique key. If we had two contacts both named "Bob Smith", we would not be able to distinguish between them. This is a violation of condition #3.
+
+Every Field Contains Only One Value
+This condition is intended to prevent us from storing multiple values in one field, such as comma-delimited data. For example, say we wanted to store multiple phone numbers per contact, like their mobile and home phones. If we decided to just comma-separate the values like this:
+
+
+Thus, by adding contact ID, we can distingusih people with the same names.
+
+
+
+2NF(SECOND-NORMAL FORM)
+
+Every non primary key is dependent on primary key.
+
+
+By branching from primary key to secondary key, we will get to know specifically our sub-branch secondary key is.
+
+
+For example 
+
+
+Contact					Telephone(PK)
+
+Contact ID				Telephone ID
+First Name		<----		Telephone NUmber			
+Last Name 				Phone Type ID			
+					Contact ID	
+
+
+
+
+
+Adding or updating to primary key will flow to the secondary key (CONTACT ID)
+
+
+
+
+FOR THE 3NF,
+
+It is transitive dependency, where a key does not depend on primary key.
+For example, if we want to update a location but our zipcode is not being updated. By creating a new table, we can change the location and the zipcode which will sync to cthe contact.
+
+
+
+Denormalization
+
+It allows us to reduce anomalies, but it will increases our constraints by creating many tables. When using for fast output, we can always use 1NF.
