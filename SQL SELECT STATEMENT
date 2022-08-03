@@ -99,7 +99,12 @@ WHERE client.FirstName='Estrella'AND client.LastName='Bazely';
 
 ##ACTIVITY 19
 
-
+SELECT workout.Name, goal.Name 
+FROM personaltrainer.workout 
+JOIN personaltrainer.workoutgoal
+ON workout.WorkoutId = workoutgoal.WorkoutId
+JOIN personaltrainer.goal ON workoutgoal.GoalId=goal.GoalId
+WHERE workout.Name='This Is Parkour';
 
 
 
