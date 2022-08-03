@@ -1,0 +1,105 @@
+##Activity 1: Select all rows and columns from the Exercise table
+SELECT * FROM exercise
+##Activity 2: Select all rows and columns from the Client table
+SELECT * client;
+
+## Activity 3: Select all columns from Client where the City is Metairie
+SELECT * 
+FROM personaltrainer.client
+WHERE City='Metairie';
+
+## Activity 4: Is there a Client with the ClientId '818u7faf-7b4b-48a2-bf12-7a26c92de20c'?
+SELECT * 
+FROM personaltrainer.client
+WHERE ClientId='818u7faf-7b4b-48a2-bf12-7a26c92de20c';
+
+
+## Activity 5: How many rows are in the Goal table?
+SELECT COUNT(GoalId)
+FROM personaltrainer.goal;
+
+
+##Activity 6: Select Name and LevelId from the Workout table
+SELECT Name, LevelID
+FROM workout;
+
+## Activity 7: Select Name, LevelId, and Notes from Workout where LevelId is 2
+SELECT Name, LevelID, Notes FROM workout
+WHERE LevelId=2;
+
+## Activity 8: Select FirstName, LastName, and City from Client where City is Metairie, Kenner, or Gretna
+SELECT FirstName, LastName, City
+FROM client
+WHERE City = 'Metairie' 
+OR CITY = 'GRETna'
+OR CITY = 'Kenner'
+
+
+
+##Activity 9: Select FirstName, LastName, and BirthDate from Client for Clients born in the 1980s
+SELECT FirstName, LastName, BirthDate
+FROM client
+WHERE BirthDate > '1980-01-01'
+
+##Activity 10: Write the query above in a different way
+
+SELECT FirstName, LastName, BirthDate
+FROM personaltrainer.client
+WHERE BirthDate BETWEEN '1980-01-01' AND '2022-01-01';
+
+## Activity 11: How many rows in the Login table have a .gov EmailAddress?
+SELECT COUNT(clientID)
+FROM login
+WHERE EmailAddress LIKE '%.gov';
+
+
+## Activity 12: How many Logins do NOT have a .com EmailAddress?
+SELECT COUNT(clientID)
+FROM personaltrainer.login
+WHERE EmailAddress NOT LIKE '%.com';
+
+## Activity 13: Select first and last name of Clients without a BirthDate
+SELECT FirstName, LastName
+FROM client
+WHERE BirthDate IS NULL;
+
+## Activity 14: Select the Name of each ExerciseCategory that has a parent (ParentCategoryId value is not null)
+SELECT Name
+FROM exercisecategory
+WHERE ParentCategoryId IS NOT NULL;
+
+## Activity 15: Select Name and Notes of each level 3 Workout that contains the word 'you' in its Notes
+SELECT Name, Notes
+FROM workout
+WHERE LevelID=3 AND Notes LIKE '%you%';
+
+## Activity 16: Select FirstName, LastName, City from Client whose LastName starts with L,M, or N and who live in LaPlace
+SELECT FirstName, LastName, City
+FROM client
+WHERE (LastName LIKE 'L%' or LastName LIKE 'M%' or LastName LIKE 'N%') AND City='LaPlace';
+
+## Activity 17: Select InvoiceId, Description, Price, Quantity, ServiceDate and the line item total, a calculated value, 
+-- from InvoiceLineItem, where the line item total is between 15 and 25 dollars
+SELECT InvoiceId, Description, Price, Quantity, ServiceDate, Price*Quantity AS LineItemTotal
+FROM invoicelineitem
+WHERE Price*Quantity BETWEEN 15 AND 25;
+
+##ACTIVITY 18
+
+
+SELECT FirstName, LastName, emailAddress
+FROM client 
+LEFT JOIN personaltrainer.login 
+ON client.ClientID = login.ClientID
+WHERE client.FirstName='Estrella'AND client.LastName='Bazely';
+
+
+
+
+
+##ACTIVITY 19
+
+
+
+
+
