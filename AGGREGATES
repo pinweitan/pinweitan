@@ -58,17 +58,17 @@ GROUP BY INVOICELINEITEM.DESCRIPTION
 -- 3 rows
 --------------------
 SELECT
-	ClientId,
+	CLIENT.ClientId,
     FirstName,
     LastName,
-    SUM(Price * li.Quantity) Total
-FROM Client c
-INNER JOIN Invoice i ON c.ClientId = i.ClientId
-INNER JOIN InvoiceLineItem li ON i.InvoiceId = li.InvoiceId
-WHERE i.InvoiceStatus = 2
-GROUP BY c.ClientId, c.FirstName, c.LastName
-HAVING SUM(li.Price * li.Quantity) > 1000.00
-ORDER BY c.LastName, c.FirstName;
+    SUM(InvoiceLineItem.Price * InvoiceLineItem.Quantity) Total
+FROM Client 
+INNER JOIN Invoice ON CLIENT.ClientId = INVOICE.ClientId
+INNER JOIN InvoiceLineItem ON INVOICE.InvoiceId = INVOICELINEITEM.InvoiceId
+WHERE INVOICE.InvoiceStatus = 2
+GROUP BY CLIENT.ClientId, CLIENT.FirstName, CLIENT.LastName
+HAVING SUM(INVOICELINEITEM.Price * INVOICELINEITEM.Quantity) > 1000.00
+ORDER BY CLIENT.LastName, CLIENT.FirstName;
 -- Select ClientId, FirstName, and LastName from Client
 -- for clients who have *paid* over $1000 total.
 -- Paid is Invoice.InvoiceStatus = 2.
@@ -76,27 +76,37 @@ ORDER BY c.LastName, c.FirstName;
 -- 146 rows
 --------------------
 SELECT
+	EXERCISECATEGORY.NAME AS CategoryName,
+    COUNT(EXERCISE.ExerciseId) AS ExerciseCount
+FROM ExerciseCategory 
+INNER JOIN Exercise  ON EXERCISECATEGORY.ExerciseCategoryId = EXERCISE.ExerciseCategoryId
+GROUP BY eXERCISecategory.ExerciseCategoryId, EXERCISECATEGORY.NAME
+ORDER BY COUNT(EXERCISE.ExerciseId) DESC
+SELECT
 	c.`Name` CategoryName,
     COUNT(e.ExerciseId) ExerciseCount
 FROM ExerciseCategory c
 INNER JOIN Exercise e ON c.ExerciseCategoryId = e.ExerciseCategoryId
 GROUP BY c.ExerciseCategoryId, c.`Name`
 ORDER BY COUNT(e.ExerciseId) DESC;
-
 -- Select Exercise.Name along with the minimum, maximum,
 -- and average ExerciseInstance.Sets.
 -- Order by Exercise.Name.
 -- 64 rows
 --------------------
 SELECT
-	e.`Name` ExerciseName,
-    MIN(i.Sets) MinSets,
-    MAX(i.Sets) MaxSets,
-    AVG(i.Sets) AvgSets
-FROM Exercise e
-INNER JOIN ExerciseInstance i ON e.ExerciseId = i.ExerciseId
-GROUP BY e.ExerciseId, e.`Name`
-ORDER BY e.`Name`;
+	EXERCISE.NAME AS ExerciseName,
+    MIN(exerciseinstance.Sets) MinSets,
+    MAX(EXERCISEINSTANCE.Sets) MaxSets,
+    AVG(EXERCISEINSTANCE.Sets) AvgSets
+FROM Exercise 
+INNER JOIN ExerciseInstance  ON EXERCISE.ExerciseId = EXERCISEINSTANCE.ExerciseId
+GROUP BY EXERCISE.ExerciseId, EXERCISE.NAME
+ORDER BY EXERCISE.Name;
+
+
+
+
 
 -- Find the minimum and maximum Client.BirthDate
 -- per Workout.
@@ -106,14 +116,14 @@ ORDER BY e.`Name`;
 -- '3, 2, 1... Yoga!', '1928-04-28', '1993-02-07'
 --------------------
 SELECT
-	w.`Name` WorkoutName,
-	MIN(c.BirthDate) EarliestBirthDate,
-    MAX(c.BirthDate) LatestBirthDate
-FROM Workout w
-INNER JOIN ClientWorkout cw ON w.WorkoutId = cw.WorkoutId
-INNER JOIN Client c ON cw.ClientId = c.ClientId
-GROUP BY w.WorkoutId, w.`Name`
-ORDER BY w.`Name`;
+	WORKOUT.Name AS WorkoutName,
+	MIN(CLIENT.BirthDate) EarliestBirthDate,
+    MAX(CLIENT.BirthDate) LatestBirthDate
+FROM Workout 
+INNER JOIN ClientWorkout ON WORKOUT.WorkoutId = CLIENTWORKOUT.WorkoutId
+INNER JOIN Client  ON CLIENTWORKOUT.ClientId = CLIENT.ClientId
+GROUP BY WORKOUT.WorkoutId, WORKOUT.Name
+ORDER BY WORKOUT.Name;
 
 -- Count client goals.
 -- Be careful not to exclude rows for clients without goals.
@@ -121,12 +131,12 @@ ORDER BY w.`Name`;
 -- 50 rows with no goals
 --------------------
 SELECT
-	c.ClientId,
-    COUNT(cg.GoalId) GoalCount
-FROM Client c
-LEFT OUTER JOIN ClientGoal cg ON c.ClientId = cg.ClientId
-GROUP BY c.ClientId
-ORDER BY COUNT(cg.GoalId) ASC;
+	client.ClientId,
+    COUNT(CLIENTGOAL.GoalId) AS GoalCount
+FROM Client 
+LEFT OUTER JOIN ClientGoal ON CLIENT.ClientId = CLIENTGOAL.ClientId
+GROUP BY CLIENT.ClientId
+ORDER BY COUNT(CLIENTGOAL.GoalId) ;
 
 -- Select Exercise.Name, Unit.Name, 
 -- and minimum and maximum ExerciseInstanceUnitValue.Value
@@ -135,40 +145,40 @@ ORDER BY COUNT(cg.GoalId) ASC;
 -- 82 rows
 --------------------
 SELECT
-	e.`Name` ExerciseName,
-    u.`Name` UnitName,
-    MIN(uv.Value) MinValue,
-    MAX(uv.Value) 'MaxValue'
-FROM Exercise e
-INNER JOIN ExerciseInstance ei 
-	ON e.ExerciseId = ei.ExerciseId
-INNER JOIN ExerciseInstanceUnitValue uv 
-	ON ei.ExerciseInstanceId = uv.ExerciseInstanceId
-INNER JOIN Unit u ON uv.UnitId = u.UnitId
-GROUP BY e.ExerciseId, e.`Name`, u.UnitId, u.`Name`
-ORDER BY e.`Name`, u.`Name`;
+	EXERCISE.Name ExerciseName,
+    UNIT.Name AS UnitName,
+    MIN(EXERCISEINSTANCEUNITVALUE.Value) MinValue,
+    MAX(EXERCISEINSTANCEUNITVALUE.Value) 'MaxValue'
+FROM Exercise 
+INNER JOIN ExerciseInstance 
+	ON EXERCISE.ExerciseId = EXERCISEINSTANCE.ExerciseId
+INNER JOIN ExerciseInstanceUnitValue  
+	ON EXERCISEINSTANCE.ExerciseInstanceId = EXERCISEINSTANCEUNITVALUE.ExerciseInstanceId
+INNER JOIN Unit  ON EXERCISEINSTANCEUNITVALUE.UnitId = UNIT.UnitId
+GROUP BY EXERCISE.ExerciseId, EXERCISE.Name, UNIT.UnitId, UNIT.Name
+ORDER BY EXERCISE.Name, UNIT.Name;
 
 -- Modify the query above to include ExerciseCategory.Name.
 -- Order by ExerciseCategory.Name, then Exercise.Name, then Unit.Name.
 -- 82 rows
 --------------------
 SELECT
-	c.`Name` CategoryName,
-	e.`Name` ExerciseName,
-    u.`Name` UnitName,
-    MIN(uv.Value) MinValue,
-    MAX(uv.Value) 'MaxValue'
-FROM Exercise e
-INNER JOIN ExerciseInstance ei 
-	ON e.ExerciseId = ei.ExerciseId
-INNER JOIN ExerciseInstanceUnitValue uv 
-	ON ei.ExerciseInstanceId = uv.ExerciseInstanceId
-INNER JOIN Unit u 
-	ON uv.UnitId = u.UnitId
-INNER JOIN ExerciseCategory c 
-	ON e.ExerciseCategoryId = c.ExerciseCategoryId
-GROUP BY e.ExerciseId, e.`Name`, u.UnitId, u.`Name`, c.`Name`
-ORDER BY c.`Name`, e.`Name`, u.`Name`;
+	EXERCISECATEGORY.Name AS CategoryName,
+	EXERCISE.Name AS ExerciseName,
+    UNIT.Name AS UnitName,
+    MIN(EXERCISEINSTANCEUNITVALUE.Value) MinValue,
+    MAX(exerciseinstanceunitvalue.Value) 'MaxValue'
+FROM Exercise 
+INNER JOIN ExerciseInstance  
+	ON exercise.ExerciseId = exerciseinstance.ExerciseId
+INNER JOIN ExerciseInstanceUnitValue  
+	ON exerciseinstance.ExerciseInstanceId = exerciseinstanceunitvalue.ExerciseInstanceId
+INNER JOIN Unit 
+	ON EXERCISEINSTANCEUNITVALUE.UnitId = UNIT.UnitId
+INNER JOIN ExerciseCategory 
+	ON EXERCISE.ExerciseCategoryId = EXERCISECATEGORY.ExerciseCategoryId
+GROUP BY EXERCISE.ExerciseId, EXERCISE.Name, UNIT.UnitId, UNIT.Name, exercisecategory.Name
+ORDER BY EXERCISECATEGORY.Name, EXERCISE.`Name`, UNIT.`Name`;
 
 -- Select the minimum and maximum age in years for
 -- each Level.
@@ -176,14 +186,14 @@ ORDER BY c.`Name`, e.`Name`, u.`Name`;
 -- 4 rows
 --------------------
 SELECT
-	l.`Name` LevelName,
-	MIN(DATEDIFF(CURDATE(), c.BirthDate) / 365) MinAge,
-    MAX(DATEDIFF(CURDATE(), c.BirthDate) / 365) MaxAge
-FROM Level l
-INNER JOIN Workout w ON l.LevelId = w.LevelId
-INNER JOIN ClientWorkout cw ON w.WorkoutId = cw.WorkoutId
-INNER JOIN Client c ON cw.ClientId = c.ClientId
-GROUP BY l.LevelId, l.`Name`;
+	LEVEL.Name AS LevelName,
+	MIN(DATEDIFF(CURDATE(), CLIENT.BirthDate) / 365) MinAge,
+    MAX(DATEDIFF(CURDATE(), CLIENT.BirthDate) / 365) MaxAge
+FROM Level 
+INNER JOIN Workout  ON LEVEL.LevelId = WORKOUT.LevelId
+INNER JOIN ClientWorkout ON WORKOUT.WorkoutId = CLIENTWORKOUT.WorkoutId
+INNER JOIN Client  ON CLIENTWORKOUT.ClientId = CLIENT.ClientId
+GROUP BY LEVEL.LevelId, LEVEL.`Name`;
 
 -- Stretch Goal!
 -- Count logins by email extension (.com, .net, .org, etc...).
@@ -205,13 +215,13 @@ ORDER BY COUNT(EmailAddress) DESC;
 -- 139 rows
 --------------------
 SELECT
-	w.`Name` WorkoutName,
-    CONCAT(c.FirstName, ' ', c.LastName) ClientName,
-    COUNT(cg.GoalId)
-FROM Client c
-INNER JOIN ClientGoal cg ON c.ClientId = cg.ClientId
-INNER JOIN WorkoutGoal wg ON cg.GoalId = wg.GoalId
-INNER JOIN Workout w ON wg.WorkoutId = w.WorkoutId
-GROUP BY w.WorkoutId, w.`Name`, c.ClientId, c.FirstName, c.LastName
-HAVING COUNT(cg.GoalId) > 1
-ORDER BY c.LastName, c.FirstName;
+	WORKOUT.NamE AS WorkoutName,
+    CONCAT(CLIENT.FirstName, ' ', CLIENT.LastName) ClientName,
+    COUNT(CLIENTGOAL.GoalId)
+FROM Client 
+INNER JOIN ClientGoal  ON CLIENT.ClientId = CLIENTGOAL.ClientId
+INNER JOIN WorkoutGoal  ON CLIENTGOAL.GoalId = WORKOUTGOAL.GoalId
+INNER JOIN Workout  ON WORKOUTGOAL.WorkoutId = WORKOUT.WorkoutId
+GROUP BY WORKOUT.WorkoutId, WORKOUT.Name, CLIENT.ClientId, CLIENT.FirstName, CLIENT.LastName
+HAVING COUNT(CLIENTGOAL.GoalId) > 1
+ORDER BY CLIENT.LastName, CLIENT.FirstName;
