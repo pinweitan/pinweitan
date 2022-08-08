@@ -1,0 +1,5 @@
+alpha = str(input("Enter your LAST NAME"))
+beta = str(input("ENTER YOUR FIRST NAME"))
+charlie= int(input("ENTER YOUR number"))
+delta = int(input("ENTER YOUR YEAR"))
+print(f"my first name is {alpha}, my last name is  {beta}, my number is  {charlie}, im born in {delta}")
