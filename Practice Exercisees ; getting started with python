@@ -1,0 +1,71 @@
+##11
+
+firstname="Robert"
+lastname="Taylor"
+address="25 Main Street"
+city="Paterson"
+state="NJ"
+zip="07501"
+phone="201-857-5309"
+print(f"your firstname is {firstname}, your lastname is {lastname}, \nyour address is {address}, your city is {city}, your state is {state}, \nyour zip is {zip}, your number is {phone}")
+user = str(input("what do you wanna change?"))
+user1 = str(input("please change your respective variable"))
+user = user.capitalize()
+user1 =user1.capitalize()
+if user == "Firstname":
+    firstname = user1
+
+elif user == "Lastname":
+    lastname = user1
+elif user == "Address":
+    address = user1
+elif user == "City":
+    city = user1
+elif user == "State":
+    state = user1
+elif user == "Zip":
+    zip = user1
+elif user == "Phone":
+    phone = user1
+print(f"your firstname is {firstname}, your lastname is {lastname}, \nyour address is {address}, your city is {city}, your state is {state}, \nyour zip is {zip}, your number is {phone}")
+
+##12
+firstname = input("please enter your firstname")
+lastname = input("please enter your lastname")
+streetaddress = str(input("please enter your street address"))
+city= str(input("please enter your city"))
+zip=int(input("please enter your zip"))
+number= int(input("please enter your number"))
+emailaddress=str(input("please enter your emailaddress"))
+print(f"your firstname is {firstname}, your lastname is {lastname}, \nyour address is {streetaddress}, your city is {city}, your zip is {zip}, \nyour zip is {zip}, your number is {number}\nyour email address is{emailaddress}")
+##13
+firstname = input("please enter your firstname")
+lastname = input("please enter your lastname")
+streetaddress = str(input("please enter your street address"))
+city= str(input("please enter your city"))
+zip=int(input("please enter your zip"))
+number= int(input("please enter your number"))
+emailaddress=str(input("please enter your emailaddress"))
+print(f"your firstname is {firstname}, your lastname is {lastname}, \nyour address is {streetaddress}, your city is {city}, \nyour zip is {zip}, your number is {number}\nyour email address is{emailaddress}")
+
+
+user = str(input("what do you wanna change?"))
+user1 = str(input("please change your respective variable"))
+user = user.capitalize()
+user1 =user1.capitalize()
+if user == "Firstname":
+    firstname = user1
+elif user == "Lastname":
+    lastname = user1
+elif user == "StreetAddress":
+    streetaddress = user1
+elif user == "City":
+    city = user1
+elif user == "Zip":
+    zip = user1
+elif user == "Number":
+    number = user1
+elif user == "EmailAddress":
+    emailaddress = user1
+
+print(f"your firstname is {firstname}, your lastname is {lastname}, \nyour address is {streetaddress}, your city is {city}, \nyour zip is {zip}, your number is {number}\nyour email address is{emailaddress}")
