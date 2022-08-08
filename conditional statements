@@ -1,0 +1,71 @@
+##1
+user = float(input("How much money you have?"))
+if user >= 20:
+    print("youre rich!")
+else:
+    print("youre broke!")
+##2
+
+Cat=input("Do you own any cats?(Yes/No)")
+Catcapitalize=Cat.capitalize()
+Dog=input("Do you own any dogs?(Yes/No)")
+Dogcapitalize=Dog.capitalize()
+if Catcapitalize=="Yes" and Dogcapitalize=="Yes":
+    print("You must really love pets!")
+else:
+    print("Maybe you need more pets.")
+### 3
+q1=input("Is orange a fruit? (True/False): ")
+q2=input("Is apple a fruit? (True/False): ")
+
+a1=q1.capitalize()
+a2=q2.capitalize()
+
+q1Ans="True"
+q2Ans="True"
+
+cor_ans=0
+if a1==q1Ans:
+  cor_ans+=1
+elif a1 != q1Ans:
+    cor_ans += 0
+if a2==q2Ans:
+  cor_ans+=1
+elif a2 != q2Ans:
+    cor_ans+=0
+
+print(f"is orange a fruit? Answer is {q1Ans})")
+print(f"is apple a fruit? Ans: {q2Ans})")
+
+print(f"Your answers: \nquestion 1: {q1}, question 2: {q2}")
+print(f"your total score is {cor_ans}")
+###4
+
+user = str(input("What season is it now?"))
+
+if user == "fall":
+    print("I bet the leaves are pretty there!")
+elif user == "winter":
+    print("I hope you are ready for the snow!")
+elif user == "spring":
+    print("I can smell the flowers")
+elif user == "summer":
+    print("make sure your ac is working!")
+else:
+    print("i dont recognize that seaason")
+
+user1=str(input("what season is it now?"))
+if user == "fall" or user == "autumn":
+    print("i bet leaves are pretty there")
+elif user == 'summer':
+    print("make sure your ac is working!")
+elif user == 'winter':
+    print("i hope you're ready for snow")
+#4.1
+user1=str(input("what season is it now?"))
+if user1 == "fall" or user1 == "autumn":
+    print("i bet leaves are pretty there")
+elif user1 == 'summer':
+    print("make sure your ac is working!")
+elif user1 == 'winter':
+    print("i hope you're ready for snow")
