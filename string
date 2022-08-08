@@ -9,3 +9,12 @@ minute = hour * 60
 second = minute * 60
 
 print(f"{number_of_days} day(s) equal to {hour} hours, {minute} minutes, and {second} seconds.")
+
+###QN 4
+a = int(input("enter any value"))
+if a == 2:
+    print("thank you")
+elif a == 3:
+    print("correct")
+else:
+    print("error")
