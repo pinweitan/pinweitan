@@ -2,3 +2,13 @@ firstname= "pinwei"
 lastname= "tan"
 
 print(f"{firstname} {lastname}")
+###3
+time = int(input("enter time in days"))
+day = time // (1*365)
+time = time % (1*365)
+hour = time  // 24
+time %= 24
+min = time //60
+time %= 60
+seconds = time
+print("d:h:m:s -> %d:%d:%d:%d" % (day, hour, min, seconds))
