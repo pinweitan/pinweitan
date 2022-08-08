@@ -1,0 +1,12 @@
+first_name = str(input("Please input your first name")).capitalize()
+last_name = str(input("Please input your last name")).capitalize()
+city = str(input("Please enter your city"))
+hourly_wage = float(input("Please enter your wage"))
+hours_work_eachweek=float(input("enter hours work each week"))
+weekly_wage = hourly_wage * hours_work_eachweek
+monthly_wage = weekly_wage * 4
+yearly_wage = weekly_wage * 48
+
+print(f"Hi {first_name} {last_name}! How are you?")
+print(f"I hope the weather is nice in {city}")
+print(f"Based on the information you provided, you earn {weekly_wage} dollars per week, approximately {monthly_wage} dollars per month, and {yearly_wage} dollars per year.")
