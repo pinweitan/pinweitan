@@ -1,0 +1,4 @@
+firstname= "pinwei"
+lastname= "tan"
+
+print(f"{firstname} {lastname}")
