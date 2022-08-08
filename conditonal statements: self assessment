@@ -1,0 +1,17 @@
+name = str(input("whats your name?"))
+name=name.capitalize()
+if name[0] == "A" or name[0] == "B" or name[0] == "C" or name[0] == "D":
+    team = "reddragons"
+if name[0] == "E" or name[0] == "F" or name[0] == "G" or name [0] =="H":
+    team = "dark wizards"
+if name[0] == "I" or name [0] == "J" or name[0] == "K" or name[0] == "L":
+    team = "moving castles"
+if name[0] == "M" or name[0] == "N" or name[0] =="O" or name [0] == "P":
+    team = "golden stiches"
+if name[0] == "Q" or name[0] == "R" or name[0] == "S" or name[0] == "T":
+    team = "night guards"
+if name[0] == "U" or name[0] == "V" or name[0] == "W" or name [0] == "X" or name[0] =="Y" or name[0] == "Z":
+    team = "black holes"
+
+print(f"Aha!, you're on team {team}" )
+print("Good luck in games!")
