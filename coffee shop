@@ -1,0 +1,23 @@
+size = input("what size you want? small, medium or large")
+if size == "small":
+    s = 2
+elif size == "medium":
+    s = 3
+elif size == "large":
+    s = 4
+type = input("what type you want? brewed, espresso or cold brew")
+if type == "brewed":
+    t = 0
+elif type == "espresso":
+    t = 0.5
+elif type == "cold brew":
+    t = 1
+flavor=input("what flavor you want")
+if flavor == "none":
+    f = 0
+else:
+    f = 0.5
+
+print(f"you ordered {size} {type} with {flavor}")
+total_sum = round((s+t+f)*1.15,2)
+print(f"your total cost is {total_sum}")
