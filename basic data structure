@@ -1,0 +1,128 @@
+##1
+name = str(input("whats your name?"))
+age = int(input("whats your age?"))
+place = str(input("where you live?"))
+list = []
+list.append(name)
+list.append(age)
+list.append(place)
+print(list)
+##2
+name = str(input("whats your name?"))
+age = int(input("whats your age?"))
+place = str(input("where you live?"))
+list = []
+list.append(name)
+list.append(age)
+list.append(place)
+print(list)
+new = int(input("whats your phone number?"))
+new1= int(input("whats your zipcode?"))
+list.append(new)
+list.append(new1)
+print(list)
+##3
+name = str(input("whats your name?"))
+age = int(input("whats your age?"))
+place = str(input("where you live?"))
+list = []
+list.append(name)
+list.append(age)
+list.append(place)
+print(list)
+new = int(input("whats your phone number?"))
+new1= int(input("whats your zipcode?"))
+list.append(new)
+list.append(new1)
+print(list)
+user = str(input("what do you wanna delete?"))
+if user == "name":
+    list.pop(0)
+    print(list)
+elif user == "age":
+    list.pop(1)
+    print(list)
+elif user == "place":
+    list.pop(2)
+    print(list)
+    
+ ##4
+ name = str(input("whats your name?"))
+age = int(input("whats your age?"))
+place = str(input("where you live?"))
+list = []
+list.append(name)
+list.append(age)
+list.append(place)
+print(list)
+new = int(input("whats your phone number?"))
+new1= int(input("whats your zipcode?"))
+list.append(new)
+list.append(new1)
+print(list)
+change = str(input("what do you wanna change?"))
+change1= str(input("change your value"))
+if change == "name":
+    list[0] = change1
+    print(list)
+elif change == "age":
+    list[1] = change1
+    print(list)
+
+elif age == "place":
+##5
+name = ('PinWei', 'Tan',)
+profession = ('wiley beginner',)
+address = ('main street',)
+prevaddress = ('joker street',)
+fullcontact = name + profession + address + prevaddress
+print(fullcontact)
+##6
+name = ('PinWei', 'Tan',)
+profession = ('wiley beginner',)
+address = ('main street',)
+prevaddress = ('joker street',)
+fullcontact = name + profession + address + prevaddress
+print(fullcontact)
+prompt1 = str(input("what do you wanna change?"))
+prompt2= str(input("what value you wanna change?"))
+if prompt1 == "name":
+    y = list(fullcontact)
+    y[0] = prompt2
+    fullcontact = tuple(y)
+    print(fullcontact)
+elif prompt1 == "profession":
+    y = list(fullcontact)
+    y[1] = prompt2
+    fullcontact = tuple(y)
+    print(fullcontact)
+elif prompt1 == "address":
+    y = list(fullcontact)
+    y[2] = prompt2
+    fullcontact = tuple(y)
+    print(fullcontact)
+elif prompt1 == "prevaddress":
+    y = list(fullcontact)
+    y[3] = prompt2
+    fullcontact = tuple(y)
+    print(fullcontact)
+##selfasssment
+tup = (12,2,3,4,6,7,-1,-3,-2,-10,-11,-13)
+
+list1=[tup[0],tup[1],tup[2],tup[3]]
+list2=[tup[4],tup[5],tup[6],tup[7]]
+list3=[tup[8],tup[9],tup[10],tup[11]]
+
+
+print("original list1",list1)
+list1.reverse()
+print("reverse list1",list1)
+
+print("original list2",list2)
+list2.reverse()
+print("reverse list2",list2)
+
+
+print("original list3",list3)
+list3.reverse()
+print("reverse list3",list3)
