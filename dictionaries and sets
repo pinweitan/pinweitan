@@ -1,0 +1,125 @@
+##1
+dictionary = {"hello":4,"world":4,"I":1,"am":2,"Martha":3}
+total = 0
+for i in dictionary:
+    total += dictionary[i]
+print(total)
+##2
+alpha_dict = {"g": 14, "q": 16, "h": 19}
+
+new_value = max(alpha_dict.values())
+print(new_value)
+
+##3
+sum = 0
+i = 0
+thisset = {1,2,3}
+for i in thisset:
+        sum += i
+print(sum)
+
+##4
+# Python code to get the minimum element from a set
+def MIN(sets):
+    return (min(sets))
+
+# Driver Code
+sets = set([4, 12, 10, 9, 4, 13])
+print(MIN(sets))
+# Python code to get the minimum element from a set
+def MAX(sets):
+    return (max(sets))
+
+print(MAX(sets))
+
+##5
+###Given the following dictionary storage, complete the following tasks:
+
+##Add a key named "freezer".
+##Set the value of "freezer" to be a list containing the items "ice cubes", "ice cream", and "pepperoni pizza".
+##Sort the items in the cupboard using sort.
+####Add "cream" to the fridge.
+#Remove "sugar" from the cupboard.
+#Subtract $25 from the emergency jar.
+storage = {
+    "cupboard" : ["spices", "flour", "sugar"],
+    "drawer" : ["fork", "knife", "spoon"],
+    "fridge" : ["butter", "milk", "cheese"],
+    "emergency jar" : 150
+}
+storage['freezer'] = ['ice cubes', 'ice-cream' , 'pepproni pizza']
+storage['cupboard'].sort()
+storage['fridge'].append("cream")
+storage['cupboard'].pop(2)
+storage['emergency jar']-=25
+print(storage)
+
+##6
+shopping_list = {"milk" : 4,
+"butter" : 2,
+"crackers" : 1.5,
+"rice" : 2.25,
+"spaghetti" : 1.75,
+"dish soap": 3.25}
+total_cost=0
+print(shopping_list)
+for item in shopping_list.keys():
+    print(f"{item}\nprice:{shopping_list[item]}")
+
+    total_cost += shopping_list[item]
+print(f"your total cost is {total_cost}")
+
+##7
+price = {"milk" : 4,
+"butter" : 2,
+"crackers" : 1.5,
+"rice" : 2.25,
+"spaghetti" : 1.75,
+"dish soap": 3.25}
+
+qty ={"milk" : 1,
+"butter" : 1,
+"crackers" : 3,
+"rice" : 2,
+"spaghetti" : 5,
+"dish soap": 1}
+print(price)
+print(qty)
+
+result = {key:price[key]*qty[key] for key in price}
+print(result)
+print("your total is", sum(result.values()))
+
+##8
+
+set1 = {'alpha','beta', 'charlie','delta','echo'}
+set = {'alpha','beta', 'charlie','delta','echo'}
+
+i = ""
+while i not in set:
+        user = str(input('please enter a value'))
+        user1= str(input('do you want add or remove, press x to quit'))
+        if user1 == 'remove':
+            if user in set:
+                set.remove(user)
+                print(set)
+            elif user1 =='quit':
+                break
+            else:
+                print("error!!")
+
+        elif user1 == 'add':
+            if user in set:
+                print("error!")
+
+            elif user1 == 'quit':
+                break
+            else:
+                set.add(user)
+                print(set)
+        elif user1 == 'quit':
+            break
+print(f"original set is {set1}")
+print(f"new set is {set}")
+set-=set1
+print(f"difference is {set}")
