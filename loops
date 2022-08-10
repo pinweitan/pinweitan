@@ -1,0 +1,144 @@
+###1
+fruit_list = ['apple', 'banana', 'cherry', 'gooseberry', 'kumquat', 'orange', 'pineapple']
+for fruit in fruit_list:
+    print(fruit)
+###2
+# create a string variable
+message = input("whats your letter?")
+# use a for loop to iterate through the list character by character
+for i in message:
+    print(i)
+###3
+string = 'hello'
+count = 0
+for i in string:
+    count+=1
+print(count)
+###4
+a = ["a", "bc", "rye", "hello", "c" , ""]
+for letters in a:
+    if letters.startswith('rye') or letters.startswith('hello'):
+        print(letters)
+###5
+### use while
+i = 100
+while i<=1000:
+    if i % 50 == 0:
+        print(i)
+    i += 1
+###use range
+mylist = list(range(100,1001))
+for my in mylist:
+    if my % 50 == 0:
+        print(my)
+###6
+sum = 0
+i=0
+for i in range(0,101):
+    sum += i
+
+print(sum)
+###7
+user = int(input("enter your number"))
+import math
+
+x=user
+
+# returning the factorial
+print ("The factorial of 5 is : ", math.factorial(x))
+
+###8
+
+
+fruit_list = ["apple", "banana", "cherry", "gooseberry", "kumquat", "orange",
+"pineapple"]
+whatfruit = str(input("What fruit do you want?"))
+fruit = fruit_list[0-7]
+while fruit in fruit_list:
+    if whatfruit == fruit:
+        print(f"your fruit is {whatfruit}")
+        break
+    elif whatfruit != fruit:
+        user=str(input("Please try again, press x to break"))
+        if user == fruit:
+            print(f"{user} is in side")
+        elif user == 'x':
+            break
+
+
+###9
+suma = 0
+while True:
+
+    sum1 = input("add number or 'Q' to quit: ")
+    if sum1 == 'Q':
+        break;
+    if sum1.isdigit():
+        suma = suma + int(sum1)
+        print(suma)
+
+    else:
+        print('Please enter a digit!')
+
+###10:
+# Multiplication table (from 1 to 10) in Python
+
+user=int(input("whats your num?"))
+
+# To take input from the user
+# num = int(input("Display multiplication table of? "))
+
+# Iterate 10 times from i = 1 to 10
+for i in range(1, user**2):
+   print(user, 'to the power', i, '=', user**i)
+###10
+###11
+for num in range(0, 101):
+   if num > 1:
+       for i in range(2, num):
+           if (num % i) == 0:
+               break
+       else:
+           print(num)
+
+###12
+
+def gcf(num1, num2):
+    if num1>num2:
+        num1,num2= num2,num1
+    for x in range(num1, 0, -1):
+        if num1 % x ==0 and num2 % x ==0:
+            return x
+num1=int(input("add your number"))
+num2=int(input("add your number"))
+print(str(gcf(num1,num2)))
+
+###13
+number=int(input("input a number :"))
+
+for i in range(0,10):
+    count=0;
+    temp=number;
+    while temp>0:
+        lastDigit=temp%10
+        if lastDigit==i:
+            count=count+1
+        temp=temp//10;
+    if count>0:
+        print(i,"occurs",count, "times")
+
+##14
+
+a=int(input("ENTER A FIRST NUMBER "))
+
+b=int(input("ENTER THE SECOND NUMBER "))
+
+c=a*b
+
+for i in range(1,c+1):
+
+    if(i%a==0 and i%b==0):
+
+        print("THE LCM IS = ",i)
+
+        break
