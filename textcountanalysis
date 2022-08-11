@@ -1,8 +1,9 @@
+###1
 s = 'imagine a vast sheet of paper on which straight lines, triangles, squares, pentagons, hexagons, and other figures, instead of remaining fixed in their places, move freely about, on or in the surface, but without the power of rising above or sinking below it, very much like shadows — only hard and with luminous edges — and you will then have a pretty correct notion of my country and countrymen. alas, a few years ago, i should have said "my universe": but now my mind has been opened to higher views of things.'
 s_lower= s.lower()
 print(s_lower)
 
-### new
+### 2
 
 words = list()
 words = s.split()
@@ -35,18 +36,19 @@ import string #import the string module
 #use the string.punctuation built-in python to create a list of all punctuations
 punctuation_list =  list(string.punctuation)  #do not delete this
 print(punctuation_list)
-w_clean = []
+w_clean = list()
 for i in words:
-    clear = i
-    if len(clear) <= 1:
-        if clear in punctuation_list:
-            continue
-    for j in punctuation_list:
-        if j in clear:
-            clear = clear.replace(j,"")
-    w_clean.append(clear)
+    if i in punctuation_list:
+        words.remove()
+for i in words:
+        if i[0] not in punctuation_list:
+            w_clean.append(i)
+
+        if i[0] in punctuation_list:
+            w_clean.append(i[:1])
+
+print (len(w_clean))
 print(w_clean)
-print(len(w_clean))
 print(len(words))
 
 ###7
