@@ -1,0 +1,33 @@
+####Classess
+A class is a definition, like the blueprint of a house. A blueprint is a detailed model of a
+building. It may show you how to build your house, but you can’t live in a blueprint. Instead,
+you must build the house, following the plan in the blueprint before you can move in. Similarly,
+in some cases, you must instantiate an object, based on the definition contained in
+the class before you can use it.
+Another way to approach this is to think of a class as an idea and an object as the instantiation
+of that idea. For example, a class is like the idea of a German shepherd, whereas an
+object is my German shepherd named Buster.
+There are several parts to a class. Two core parts are attributes and methods.
+
+
+Attributes
+As mentioned, classes represent real-world
+entities such as a vehicle or person. Attributes
+within a class define the properties of that class. For instance, a vehicle class might have
+attributes such as make, model, color, and VIN. These properties define what’s unique
+about each vehicle. There are two types of attributes that Python supports that we will
+cover in this lesson: instance attributes and class attributes
+Objects
+We use classes as a blueprint for creating objects. For example, we know in the real world
+what represents a car (a vehicle with four wheels, doors, engine, and so on). If we wanted to
+create a certain type of car, we would use the basic prototype of a car (the class) along with
+the attributes associated with that class (four wheels, doors, engines) and create various
+instances or copies of that class (a midsize car, a truck, an SUV). In making these copies, we
+call the class to instantiate objects, which represent concrete realizations of the class.
+Once we have defined a class, we can use it to create instances of the class (called
+objects). We do this by setting the name of our instance variable equal to the name of the
+class followed by parentheses. For example, if we have a class for a person called Person,
+we can create an instance called p of that class with the following snippet:
+
+
+
