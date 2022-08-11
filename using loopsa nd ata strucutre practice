@@ -1,0 +1,97 @@
+##6
+
+#Create a computer program that completes the following tasks:
+
+#It prompts the user for a series of 5-10 integers.
+#The user must be prompted for a minimum of 5 numbers.
+#After the user has entered 5 numbers, the program should allow the user to stop entry or enter another number.
+#When the user chooses to stop or after 10 numbers have been entered, the program stops prompting for values and performs the following calculations:
+#the product of the integers
+#the average of the integers
+#the sum of the integers
+#the min of the integers
+#the max of the integers
+#After performing the calculations, the program should display the following to the user:
+#the values the user entered
+#each of the calculations, using a phrase that identifies the value
+list=[]
+i = ""
+count=0
+while i not in list:
+    user=int(input('add an integer'))
+    list.append(user)
+    count +=1
+    print(list)
+    print(f"you have reached {count}")
+    if count == 5:
+        user1=int(input("add another number or press x to stop"))
+        if user1 == "x":
+            break
+        elif user != "x":
+            list.append(user1)
+    if count == 9:
+        break
+
+
+maxi = list[0]
+
+for i in list:
+    if i >= maxi:
+        maxi = i
+
+print("Greatest number: ", maxi)
+
+min =list [0]
+for i in list:
+    if i <= min:
+        min = i
+print("lowest number is", min)
+
+sum=0
+multiplication = 1
+
+
+for int in list:
+    sum+=int
+    multiplication *=int
+
+
+print(sum)
+print(multiplication)
+avg = sum/10
+print(round(avg))
+
+###7
+a = ["a", "bc", "rye", "hello", "c", ""]
+lst=[]
+count = 0
+count1=0
+for word in a:
+    if len(word) > 1:
+        print(word)
+        lst.append(word)
+print(lst)
+
+###8
+dictionary = {"hello":4,"world":4,"I":1,"am":2,"Martha":3}
+res = list(dictionary.items())[0:2]
+res1 = list(dictionary.items())[4]
+res2 = list(dictionary.items())[2]
+res3 = list(dictionary.items())[3]
+print(dictionary)
+prompt = int(input("whats your num"))
+for key,value in dictionary.items():
+    if prompt not in dictionary.values():
+        print('error')
+        break
+    else:
+        if prompt ==4:
+            print(res)
+            break
+        if prompt ==3:
+            print(res1)
+            break
+        if prompt == 1:
+            print(res2)
+        if prompt == 2:
+            print(res3)
