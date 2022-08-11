@@ -10,14 +10,14 @@ object is my German shepherd named Buster.
 There are several parts to a class. Two core parts are attributes and methods.
 
 
-Attributes
+###Attributes
 As mentioned, classes represent real-world
 entities such as a vehicle or person. Attributes
 within a class define the properties of that class. For instance, a vehicle class might have
 attributes such as make, model, color, and VIN. These properties define what’s unique
 about each vehicle. There are two types of attributes that Python supports that we will
 cover in this lesson: instance attributes and class attributes
-Objects
+###Objects
 We use classes as a blueprint for creating objects. For example, we know in the real world
 what represents a car (a vehicle with four wheels, doors, engine, and so on). If we wanted to
 create a certain type of car, we would use the basic prototype of a car (the class) along with
@@ -28,6 +28,23 @@ Once we have defined a class, we can use it to create instances of the class (ca
 objects). We do this by setting the name of our instance variable equal to the name of the
 class followed by parentheses. For example, if we have a class for a person called Person,
 we can create an instance called p of that class with the following snippet:
-
+###Methods
+Python classes allow data and functionality to be bundled together. When we create
+new classes, we create a new type of object. This allows new instances of that type. Each
+class instance has attributes attached to it for maintaining the class state; however, class
+instances can also have methods for modifying its state. This is defined by its class.
+A method is a function defined within a class. While attributes normally refer to properties
+associated with the class (like a person’s name or the number of legs an animal
+has), methods normally describe what the class can do. A class can have any number
+of methods.
+Methods that allow users to simply observe but not change the state of an object
+are called accessor methods. Methods that allow for the modification of an object are
+called mutators.
+In Listing 14.3, we create a method named display_info that is designed to display the
+attributes associated with the Person class—in
+this case, their first and last name—with
+a
+user-friendly
+statement. Using this method, we will be able to display a person’s name.
 
 
