@@ -82,3 +82,26 @@ distinct = len(wordset)
 print(word_freq)
 print(f"The number of distinct words is: {distinct}")
 print("The total number of words is:",len(w_clean))
+
+
+####stretch
+
+word="joseph lock went to lock his door."
+x=input("enter word to check its frequency: ")
+words=word.split()
+word_freq = dict()
+
+
+for i in words:
+    if i not in word_freq:
+        word_freq[i] = 1
+    else:
+        word_freq[i] += 1
+
+
+print(f"frequency of input is {word_freq[x]}")
+
+
+sortbyalpha=sorted(word_freq.items())
+print(sortbyalpha)
+
