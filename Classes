@@ -1,0 +1,78 @@
+##1
+class Vehicle:
+    #init metthod
+    def __init__(self,vehicletype,year,color):
+        self.vehicletype = vehicletype##attribute
+        self.year = year
+        self.color = color
+        self.numberofdoors = numberofdoors
+##2
+class Vehicle:
+    #init metthod
+    def __init__(self,vehicletype,year,color,numberofdoors):
+        self.vehicletype = vehicletype##attribute
+        self.year = year
+        self.color = color
+        self.numberofdoors = numberofdoors
+v1 = Vehicle('mini', 2020, 'red', 4)
+print(f"{v1.vehicletype},{v1.year},{v1.color},{v1.numberofdoors}")
+v2 = Vehicle('pickup', 2015, 'blue', 2)
+print(f"{v2.vehicletype},{v2.year},{v2.color},{v2.numberofdoors}")
+v3 = Vehicle('SUV', 2010, 'orange', 2)
+print(f"{v3.vehicletype},{v3.year},{v3.color},{v3.numberofdoors}")
+v4 = Vehicle('sedan', 1999, 'red' , 2)
+print(f"{v4.vehicletype},{v4.year},{v4.color},{v4.numberofdoors}")
+
+##3
+class Vehicle:
+    #init metthod
+    def __init__(self,vehicletype,year,color,numberofdoors):
+        self.vehicletype = vehicletype##attribute
+        self.year = year
+        self.color = color
+        self.numberofdoors = numberofdoors
+###4
+    #init metthod
+    def __init__(self,vehicletype,year,color,numberofdoors):
+        self.vehicletype = vehicletype##attribute
+        self.year = year
+        self.color = color
+        self.numberofdoors = numberofdoors
+    def display_info(self):
+        print(f"vehicle type is {self.vehicletype}, \nyear is {self.year}, \ncolor is {self.color}, \nnumber of doors is {self.numberofdoors}")
+vehicle1=Vehicle("Totoya","2020","red",2)
+vehicle1.display_info()
+###5
+class Car:
+    #init metthod
+    def __init__(self,model,year,color,owner):
+        self.model = model##attribute
+        self.year = year
+        self.color = color
+        self.owner = owner
+    def display_info(self):
+        print(f"Car model is {self.model}")
+        print(f"Car Year is {self.year}" )
+        print(f"Color is {self.color}")
+        print("Owner is ")
+        for info in self.owner:###
+            print(info)
+class Lorry:
+    def __init__(self, model,year,color, owner):
+        self.model = model
+        self.year = year
+        self.color = color
+        self.owner = owner
+    def display_info(self):
+        print(f"lorry model is {self.model}")
+        print(f"year is {self.year}")
+        print(f"color is {self.color}")
+        print("owner is: ")
+        for info in self.owner:###
+            print(info)
+c1=Car("Toyota", "1997", "red", ['Joseph Tan', 'Ryan Lee'] )
+c2=Car("Toyota", "1997", "black", ['Weekiat Tan', 'Ryan Lee'] )
+l1=Lorry("Scania", "1999", "white", ['Isaac Ang', 'Ryan Lee'] )
+c1.display_info()
+c2.display_info()
+l1.display_info()
