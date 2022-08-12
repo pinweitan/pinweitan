@@ -1,0 +1,98 @@
+class SimpleCalculator():
+        def add(self,x,y):
+            self.x = x
+            self.y= y
+            return x+y;
+        def mul(self,x,y):
+            self.x = x
+            self.y = y
+            return (x*y);
+        def div(self,x,y):
+            self.x = x
+            self.y = y
+            return x/y;
+        def sub(self, x,y):
+            self.x = x
+            self.y = y
+            return x-y;
+
+m = SimpleCalculator()
+print(m.add(3,3))
+i=0
+user3 = str(input('choose operator'))
+while i<100:
+    if user3 == 'add':
+        user =str(input('put ur value or press quit to quit'))
+        if user == 'quit':
+            print('thanks')
+            break
+
+        user1=str(input('put ur value or press quit to quit'))
+
+        if user1 == 'quit':
+            print('thanks')
+            break
+
+        x = int(user)
+        y = int(user1)
+
+
+        print(m.add(x,y))
+
+    elif user3 =='mul':
+        user =str(input('put ur value or press quit to quit'))
+        if user == 'quit':
+            print('thanks')
+            break
+        user1=str(input('put ur value '))
+        if user1 == 'quit':
+            print('thanks')
+            break
+        if 
+        x=int(user)
+        y=int(user1)
+        print(m.mul(x,y))
+
+
+
+
+        user1 = str(input('put ur value'))
+        print(m.mul(user,user1))
+
+
+    elif user3 =='div':
+        user =str(input('put ur value or press quit to quit'))
+        if user == 'quit':
+            print('thanks')
+            break
+
+        user1=str(input('put ur value or press quit to quit'))
+
+        if user1 == 'quit':
+            print('thanks')
+            break
+
+        x = int(user)
+        y = int(user1)
+        print(m.div(user,user1))
+
+
+
+    elif user3 =='sub':
+            user =str(input('put ur value or press quit to quit'))
+            if user == 'quit':
+                print('thanks')
+                break
+
+            user1=str(input('put ur value or press quit to quit'))
+
+            if user1 == 'quit':
+                print('thanks')
+                break
+
+            x = int(user)
+            y = int(user1)
+            print(m.sub(user,user1))
+    elif user3 != 'sub' or user3!= 'add' or user3!='div' or user3!='mul':
+        print('thanks')
+        break
