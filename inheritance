@@ -1,0 +1,64 @@
+class Vehicle:
+    #init metthod
+    def __init__(self,vehicletype,year,color):
+        self.vehicletype = vehicletype##attribute
+        self.year = year
+        self.color = color
+
+    def display_info(self):
+        print(f"vehicle type is {self.vehicletype}, \nyear is {self.year}, \ncolor is {self.color}")
+
+#create class
+class Car(Vehicle): # Employee is a child class
+    def display(self):
+        print(f"vehicle type is {self.vehicletype}")
+        print(f"year is {self.year}")
+        print(f'color is {self.color}')
+        print(f'shelter is {self.shelter}')
+        print(f'wheels is {self.wheels}')
+car = Car('suv',1997,'red')
+car.shelter = 'yes'
+car.wheels = '4'
+
+car.display()
+
+
+
+###3
+class Lorry(Vehicle):
+    def display(self):
+        print(f"vehicle type is {self.vehicletype}")
+        print(f"year is {self.year}")
+        print(f'color is {self.color}')
+        print(f'lorry has {self.aircon}')
+        print(f'lorry has {self.perfume}')
+lorry = Lorry('Tractor',1997,'red')
+lorry.aircon = 'aircon'
+lorry.perfume = 'lemonade'
+lorry.display()
+
+class Van(Vehicle):
+    def display(self):
+        print(f"vehicle type is {self.vehicletype}")
+        print(f"year is {self.year}")
+        print(f'color is {self.color}')
+        print(f'van has {self.freezer}')
+        print(f'van has {self.music}')
+van = Van('pickup',1997,'red')
+van.freezer = '-10 degrees freezer'
+van.music = 'punk rock music'
+van.display()
+
+
+class Sportscar(Vehicle):
+    def display(self):
+        print(f"vehicle type is {self.vehicletype}")
+        print(f"year is {self.year}")
+        print(f'color is {self.color}')
+        print(f'sportscar has {self.convertible}')
+        print(f'sportscar has {self.nitro}')
+sportscar = Sportscar('lambo',1997,'red')
+sportscar.convertible = 'convertible'
+sportscar.nitro = 'nitro'
+sportscar.display()
+
