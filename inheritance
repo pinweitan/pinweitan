@@ -1,3 +1,4 @@
+##1
 class Vehicle:
     #init metthod
     def __init__(self,vehicletype,year,color):
@@ -8,7 +9,7 @@ class Vehicle:
     def display_info(self):
         print(f"vehicle type is {self.vehicletype}, \nyear is {self.year}, \ncolor is {self.color}")
 
-#create class
+#2create class
 class Car(Vehicle): # Employee is a child class
     def display(self):
         print(f"vehicle type is {self.vehicletype}")
@@ -62,3 +63,93 @@ sportscar.convertible = 'convertible'
 sportscar.nitro = 'nitro'
 sportscar.display()
 
+
+###4
+
+
+class Lorry(Vehicle):
+    def __self__init(self, vehicletype, year, color, aircon, perfume):
+        self.vehicletype = vehicletype
+        self.year = year
+        self.color = color
+        self.aircon = aircon
+        self.perfume = perfume
+    def display(self):
+        print(f"vehicle type is {self.vehicletype}")
+        print(f"year is {self.year}")
+        print(f'color is {self.color}')
+        print(f'lorry has {self.aircon}')
+        print(f'lorry has {self.perfume}')
+lorry = Lorry('Tractor',1997,'red','aircon', 'lemonade')
+lorry.display()
+
+class Van(Vehicle):
+    def __init__(self,vehicletype,year,color,freezer,music):
+        self.vehicletype = vehicletype
+        self.year = year
+        self.color = color
+        self.freezer = freezer
+        self.music = music
+    def display(self):
+        print(f"vehicle type is {self.vehicletype}")
+        print(f"year is {self.year}")
+        print(f'color is {self.color}')
+        print(f'van has {self.freezer}')
+        print(f'van has {self.music}')
+van = Van('pickup',1997,'red','-10 degrees', 'punk rock music')
+van.display()
+
+
+class Sportscar(Vehicle):
+    def __init__(self,vehicletype,year,color,convertible,nitro):
+        self.vehicletype=vehicletype
+        self.year = year
+        self.color = color
+        self.convertible = convertible
+        self.nitro = nitro
+    def display(self):
+        print(f"vehicle type is {self.vehicletype}")
+        print(f"year is {self.year}")
+        print(f'color is {self.color}')
+        print(f'sportscar has {self.convertible}')
+        print(f'sportscar has {self.nitro}')
+sportscar = Sportscar('lambo',1997,'red', 'convertible', 'nitro')
+sportscar.display()
+###5
+class Lamborghini(Sportscar):
+    def display(self):
+            print(f"vehicle type is {self.vehicletype}")
+            print(f"year is {self.year}")
+            print(f'color is {self.color}')
+            print(f'sportscar has {self.convertible}')
+            print(f'sportscar has {self.nitro}')
+            print(f'sportscar has {self.dualturbo}')
+lambo=Lamborghini('lambo',1997,'red', 'convertible', 'nitro')
+sportscar = Sportscar('lambo',1997,'red')
+lambo.dualturbo = 'dualturbo'
+lambo.display()
+
+
+class Ferarri(Sportscar):
+    def display(self):
+            print(f"vehicle type is {self.vehicletype}")
+            print(f"year is {self.year}")
+            print(f'color is {self.color}')
+            print(f'sportscar has {self.convertible}')
+            print(f'sportscar has {self.nitro}')
+            print(f'sportscar has {self.dualturbo}')
+lambo=Lamborghini('lambo',1997,'red', 'convertible', 'nitro')
+sportscar.dualturbo = 'tripleturbo'
+sportscar.display()
+##6
+class LamboTyp3(Lamborghini):
+    def display(self):
+            print(f"vehicle type is {self.vehicletype}")
+            print(f"year is {self.year}")
+            print(f'color is {self.color}')
+            print(f'sportscar has {self.convertible}')
+            print(f'sportscar has {self.nitro}')
+            print(f'sportscar has {self.dualturbo}')
+lambotype3=Lamborghini('lambo',1997,'red', 'convertible', 'nitro')
+lambotype3.dualturbo = 'tquadraturbo'
+lambotyp3.display()
