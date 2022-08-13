@@ -153,3 +153,76 @@ class LamboTyp3(Lamborghini):
 lambotype3=Lamborghini('lambo',1997,'red', 'convertible', 'nitro')
 lambotype3.dualturbo = 'tquadraturbo'
 lambotyp3.display()
+###selfa ssessment
+
+class Fileitem:
+    name = None
+    permissions = None
+    owner = None
+    size =None
+    def __init__(self, name, permissions, owner, size,):
+        self.name = name
+        self.permissions = permissions
+        self.size = size
+        self.owner = owner
+    def display(self):
+        print(self.name, self.permissions, self.size,self.owner)
+
+class CsvFile(Fileitem):
+    def __init__(self,name,permissions,owner,size):
+        Fileitem.__init__(self, name, permissions,owner, size)
+
+class JpgFile(Fileitem):
+    dimension = None
+    def __init__(self,name, permissions, size, dimension):
+        Fileitem.__init__(self,name, permissions, size, dimension)
+        self.dimension=dimension
+
+class Mp3file(Fileitem):
+    duration = None
+    def __init__(self,name, permissions, size, duration):
+        Fileitem.__init__(self,name, permissions, size, duration)
+        self.duration=duration
+
+
+class Directory(Fileitem):
+    items = None
+    def __init__(self, name, permissions, owner, size):
+        Fileitem.__init__(self,name,permissions, owner, size)
+        self.items = []
+    def display(self):
+        Fileitem.display(self)
+        print("Displaying items in directory", self.name)
+        for i in self.items:
+            i.display()
+    def add(self, files):
+        for i in files:
+            self.items.append(i)
+
+c1 = CsvFile("CSV File 1", "read-only", "SS", "100", )
+c2 = CsvFile("CSV File 2", "read-only", "SS", "100", )
+c3 = CsvFile("CSV File 3", "read-only", "SS", "100", )
+c4 = CsvFile("CSV File 4", "read-only", "SS", "100", )
+c5 = CsvFile("CSV File 5", "read-only", "SS", "100", )
+j1 = JpgFile("Jpg File 1", "read-only", "SS", "1024x720")
+j2 = JpgFile("Jpg File 2", "read-only", "SS", "1024x720")
+j3 = JpgFile("Jpg File 3", "read-only", "SS", "1024x720")
+j4 = JpgFile("Jpg File 4", "read-only", "SS", "1024x720")
+j5 = JpgFile("Jpg File 5", "read-only", "SS", "1024x720")
+m1 = Mp3file("Mp3 File 1", "read-only", "SS", "3min 30sec")
+m2 = Mp3file("Mp3 File 2", "read-only", "SS", "3min 30sec")
+m3 = Mp3file("Mp3 File 3", "read-only", "SS", "3min 30sec")
+m4 = Mp3file("Mp3 File 4", "read-only", "SS", "3min 30sec")
+
+d1 = Directory("Dir 1", "read&write", "SS", "100")
+d2 = Directory("Dir 2", "read&write", "SS", "100")
+d3 = Directory("Dir 3", "read&write", "SS", "100")
+d4 = Directory("Dir 4", "read&write", "SS", "100")
+d5 = Directory("Dir 5", "read&write", "SS", "100")
+
+d5.add([c1, j1, m1])
+d4.add([c2, j2, m2])
+d3.add([c3, j3, m3, d4, d5])
+d2.add([c4, j4, m4, d3])
+d1.add([c5, j5, m4, d2])
+d1.display()
