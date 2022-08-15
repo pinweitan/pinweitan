@@ -31,3 +31,65 @@ $ git remote add origin https://github.com/YOUR_GITHUB_NAME/REPO_NAME.git
 
 $ git push origin master
 -> this will push your file to github.
+
+
+### Adding files
+
+
+You continue adding files:
+
+git add my_one_file_to_add.rb
+
+
+git add .
+
+
+git status
+
+git commit -m "I am commiting new updates to my project"
+
+
+git push origin master
+
+
+By using the terminal github on gitbash its easier to move your files from the terminal up to github.
+
+
+We can also use the branch to create new versions.
+
+git checkout -b branchname.
+## this will allow you to create new versions of the file. this will only make changes to the file you work on.
+
+git checkout master
+
+### this allows you go bak to your master branch.
+
+git check out branch ### allows you back to the branch.
+
+
+### at the branch, you can use 
+
+git pull origin master
+### this allows you to pull your data from master.
+
+git checkout branchname
+
+### this allows you to see what branch are you merging with the master.
+
+git merge master 
+
+### this allow you to merge master in to branch.
+git checkout master
+
+###this is to checkout master
+git merge branchname 
+
+git push origin master
+
+### this allows you to push updated file int o cloud.
+
+
+
+By using the website:
+It is easier to create github's repository and reading the files for beginners. For beginners, You can also create the file from the github website and upload your codes into it.
+However, its preferred to use terminal as you can move a lot of files without changing it.
