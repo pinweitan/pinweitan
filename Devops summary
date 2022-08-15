@@ -1,0 +1,56 @@
+Waterfall Model
+Framework: Requirement Analysis --> System ---> implementation --> testing ---> deployment ---> maintenance.
+The waterfall model is a linear sequential model. Each phase must be completed before the next phase can begin can there can be no overlapping of the phases.
+
+Requirement Analysis
+During this phase, all requirements of the system are to be captured in a requirement specified document. For example: what theme color of instagram should be
+
+System Design:
+The requirement specifications from first phase are studied in this phase and the system design is prepared. This system design helps in specifying hardware and system requirements and helps in defining the overall system architecture.
+An instance of functional requirement that is present in system design: 
+1)Upload image
+2)Like
+
+Another instance of non functional requirement that must be present in system:
+1) users must be able to upload photos without any errors
+2) it should not have any deletion of photos.
+
+Implementation − With inputs from the system design, the system is first developed in small programs called units, which are integrated in the next phase. Each unit is developed and tested for its functionality, which is referred to as Unit Testing.
+
+With implementation, it ensures
+
+Integration and Testing − All the units developed in the implementation phase are integrated into a system after testing of each unit. Post integration the entire system is tested for any faults and failures.
+
+Deployment of system − Once the functional and non-functional testing is done; the product is deployed in the customer environment or released into the market.
+1) deployment into the market for users to use: app store
+
+Maintenance − There are some issues which come up in the client environment. To fix those issues, patches are released. Also to enhance the product some better versions are released. Maintenance is done to deliver these changes in the customer environment.
+1)bugs
+
+The downsides of waterfall model is there are many risks and uncertainty. You can only see your end product when development ends and if you have any things you want to change, you cannot return to the previous phase.
+The upside of downfall model is you are able to work with less planning and if the objects are vague.
+It is a model that is fast but the end result is uncertain.
+
+
+The agile Model:
+Agile SDLC model is a combination of iterative and incremental process models with focus on process adaptability and customer satisfaction by rapid delivery of working software product. Agile Methods break the product into small incremental builds. These builds are provided in iterations. Each iteration typically lasts from about one to three weeks. 
+Requirements gathering ---> Design requirements ---> Construction/Iteration --->Deployment---> Feedback
+
+
+The Agile Model has some benefits such as being able to return to previous step when we have to make amendments to requirement analysis.
+The downside of Agile is:
+Poor resource planning
+-Because Agile is based on the idea that teams won’t know what their end result (or even a few cycles of delivery down the line) will look like from day one, it’s challenging to predict efforts like cost, time and resources required at the beginning of a project (and this challenge becomes more pronounced as projects get bigger and more complex).
+Limited documentation
+-In Agile, documentation happens throughout a project, and often “just in time” for building the output, not at the beginning. As a result, it becomes less detailed and often falls to the back burner.
+
+What is Devops?
+
+Devops is a set of practice and methodologies used to increase the speed, productivity, quality and security organizations.
+It brings about major cultural change and organizational changes while leveraging power of automation.
+
+
+Devops are a set of people from different skills in IT collaborating to work and ultimately deploy their product.
+
+With Devops, we can improve quality and performance of applications, release applications to meet faster demands, reduce IT costs and improve customer experience.
+
