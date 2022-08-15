@@ -1,0 +1,33 @@
+Terminal:
+In the terminal, by queuing the changes:
+###Initializing a new repo Type in what comes AFTER the $...do not type in the $
+
+To create repo and initialzie git
+
+$ git init
+This command creates an empty git repository - basically a .git directory with subdirectories for objects, refs/heads, refs/tags, and template files. An initial HEAD file that references the HEAD of the master branch is also created.
+
+In order to choose which file to add:
+git add pinwei.py
+- this will add pinwei python file to the local repository and to the staging area.
+By typing a ".", it will add all files and folders within the directory including subdirectories.
+
+By typing git status:
+You get to see what files have been added to the staging area.
+
+we'll see this prompt:
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#  new file:   pinwei.py
+
+to commit the files:
+press git commit -m "this is pinwei.py" <--- this sallows you write a message about what this file is.
+
+### add this if its a new repo.
+$ git remote add origin https://github.com/YOUR_GITHUB_NAME/REPO_NAME.git
+
+$ git push origin master
+-> this will push your file to github.
