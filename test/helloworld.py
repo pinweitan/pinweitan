@@ -1,4 +1,1 @@
-#!/bin/sh
-
-
-print('hello world!')
+print('helloworld')
