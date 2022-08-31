@@ -1,0 +1,233 @@
+Incident Management Summary
+
+
+
+INCIDENT MANAGEMENT
+
+Introduction to Incident Management
+Raising Incident > Fixing > Response Team > Resolve
+
+
+
+What is Incident Management?
+• Structured approach to incident response
+• Adapted from Incident Command System
+ Used by emergency response organizations for
+natural disasters
+ Provides a clear and scalable process
+ Provides clear roles and responsibilities
+• Enhances
+ Control
+ Coordination
+ Communication
+
+Incident Management Process
+01)Identify key roles and chain of command 
+02)Define responsibilites
+3)Capture response efforts for future analysi and learning
+4) Communciation
+
+Avoid Terms
+1）Codes
+2) Acronyms
+3) DSL
+Hard for to communicate across channels on what is happening.
+Managemnt by objectives:
+1)Cover specified timeframe
+2)Be proactive towards resolving
+3)Assign responsibilites
+
+Key Resource Mangement
+
+Resource Identification > Adding subject amtter experts to response team > Plannig for additional physical IT based resources
+
+
+
+-Issue assignments in a specific and timeboxed manner
+
+-Monitoring the results of the incident tasks
+
+Incident Management Key Roles
+Incident Manager
+Deputy
+Scribe
+
+Operations Lead
+Communications Lead
+Planning Lead
+
+Incident Commander
+Responsible for overall coordination
+• Keeps incident moving towards resolution
+Coordinates all the other roles
+• De facto holder of any roles not delegated to
+others
+Delegates tasks
+• Should not be personally making changes
+Only role always filled
+
+Scribe
+Assists IC
+• Captures communication
+• Captures actions
+• Captures discussion from
+conference bridge
+Use visible communication tool
+• Chatroom (Slack/Teams/etc)
+• Google docs
+Focus on capturing all information
+for future use
+
+Operations Lead
+Works with the IC
+• Develop theories about what is broken and why
+• Recommend changes to the IC
+• Coordinate the operation team's efforts to
+restore the service
+Makes sure changes are made in a controlled
+manner
+Makes sure that only operation teams are making
+changes to the system
+Brings in subject matter experts (SMEs) to assist
+
+Communications Lead
+Communications are critical
+• Internal
+• External
+Periodic updates
+• Status page
+• Social media
+• Direct communication
+May be delegated to maintain incident
+documentation
+• Communication
+• Post incident analysis
+
+Planning Lead
+Supports OL and IC
+• Capturing long-term issues
+• Creating tickets
+• Arranging handoffs
+• Tracking system divergence from SLO
+Supporting Operations teams
+• Ordering food
+
+SME On-Call Responsibilities
+• Familiarize yourself with the other roles
+• Join the incident communications channel ASAP
+• Offer theories and suggests
+• Support decisions are made by the Incident Commander
+• Keep focus on resolving the incident
+• Leave the incident channel when asked
+
+Managing Incidents effectively
+
+1)When to deal with incident
+2)Identifying impacts
+3)Incident management behavior
+
+
+When to deal with an accident:
+
+1)Requires immediate and dedicated effort to resolve
+  determine incident level and impact
+ 2) deal with incident asap when 
+ SLI indicates current failure to meet SLO
+ 
+Declare incident immediately.
+
+Incident response behavior:
+
+1)Deviate from normal ops
+2)Response team is the ultimate authority.
+
+POSTMORTEMS
+
+Objective:
+Failure is an opportunity for improvement.
+
+What went right?
+What went wrong?
+
+To Blame or not to blame:
+
+Human's tendency to look for who to blame.
+Its not the person who failed, its the system that failed.
+If system is not correct, incident will happen again.
+Focus on system that make a repeat failure less liekly.
+
+
+Continuos Improvement:
+Could this happen again?
+
+Collaboration:
+
+Boost team communication
+Open discussion of incident
+
+Blameless postmortem process
+1)Embrace Risk
+2)Capture information during incident response efforts
+
+Problem Statement > Impact Staement > Detection > Timeline > Root Causes > Corrective Actions > Share the Postmortem > Blameless culture
+
+Embracing Risk, Feedback and Fatigue
+(1) Incidents will occur: Plan for them
+                          Practice response procedure
+(2) Error budgets
+                        Change velocity
+                        
+(3) Opportunity for improvement
+Avoid heroics
+
+Failure when complexity of system guarantees hardware fialure.
+
+Security attacks occur: Those that do know they have been attacked.
+                        Those do not know they have been attacked.
+Databases will get corrupted
+
+Components get updated.
+
+Alert Fatigue： On Call ROtation
+How to provide 24x7 service.
+Is it really required
+
+Is support centralized or global?
+
+Heroics:
+Attraction of acclaim for saving the day
+Sets expectations
+
+Alert Fatigue:
+
+Common when systems are at an edge point.
+
+Monitoring cycles alert same issue
+False positive alerts
+
+Frequently leads to ignored alerts
+It will self-heal.
+
+
+Continuos Improvment
+(1)Automation
+2 Documentation
+3 Reudcing Toil
+4 Update SLO
+5 Update monitoring
+6 Update alerts
+
+Automation:
+Manual tasks vs toil
+Automation not automatic
+
+Documentation: 
+Need to be kept updated:
+Post Mortems
+ENgineered improvmeents
+Better Procedures
+
+Update Alertss:
+Eliminate False Positives
+Improve information that accompanies alert point to likely resources for faster fix
+Assign alerts to automate ticket generation.
